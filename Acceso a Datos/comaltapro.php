@@ -69,7 +69,7 @@
 
     function obtenerIDproducto($conn)
     {
-        $sql = "SELECT COUNT(ID_PRODUCTO) FROM producto";
+        $sql = "SELECT MAX(ID_PRODUCTO) FROM producto";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $num= $stmt->fetch(PDO::FETCH_ASSOC);
@@ -97,4 +97,5 @@
 ?>
 
 </body>
+
 </html>
