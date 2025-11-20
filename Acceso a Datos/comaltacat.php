@@ -52,7 +52,7 @@
 
     function obetenerID($conn)
     {
-        $sql = "SELECT COUNT(ID_CATEGORIA) FROM categoria";
+        $sql = "SELECT MAX(ID_CATEGORIA) FROM categoria";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $num = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -67,4 +67,5 @@
 
 
 </body>
+
 </html>
