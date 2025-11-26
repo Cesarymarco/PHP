@@ -80,7 +80,8 @@
         }catch(PDOException $e) {
 
             $conn->rollback();
-            echo "Error: " . $e->getMessage();
+            
+            mostrarError($e, ["dpto" => $id_dept, "dni" => $dni]);
         }
     ?>
 </body>

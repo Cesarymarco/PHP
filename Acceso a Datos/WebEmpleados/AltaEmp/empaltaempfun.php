@@ -46,6 +46,18 @@
             $stmt->execute();
             echo "Empleado insertado a la tabla emple_depart con exito.<br>";
         }
+
+        function mostrarError($e, $informacion)
+        {
+            $codigo = $e->getCode();
+
+            switch($codigo)
+            {
+                case 1062:
+                    echo "Ya hay un empleado con el dni " . $informacion['dni'] . "<br>";
+                    return;
+            }
+        }
     ?>
 
 </body>
